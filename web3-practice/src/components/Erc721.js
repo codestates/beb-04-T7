@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 function Erc721({ web3, account, erc721list }) {
     const [to, setTo] = useState("");
-		const sendToken = async (tokenAddr, tokenId) => {
+		const sendToken = async (tokenAddr, tokenId) => { 
             const tokenContract = await new web3.eth.Contract(
                 erc721Abi,
                 tokenAddr,
@@ -29,9 +29,7 @@ function Erc721({ web3, account, erc721list }) {
 		                  <span className="symbol">{token.symbol}</span>)
 		                  <div className="nft">id: {token.tokenId}</div>
 		                  <img src={"https://ipfs.io/ipfs/"+token.tokenURI} width={300} />
-		                  
-											{/* nft 전송 관련 */}
-											<div className="tokenTransfer">
+                            <div className="tokenTransfer">
 		                      To:{" "}
 		                      <input
 		                          type="text"
